@@ -4,33 +4,36 @@ const passport = require('passport');
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  res.send('This the auth route!');
+  res.send('This the users route!');
 });
 
 router.get(
-    '/google', 
+    '/auth/google', 
     passport.authenticate('google', {
         scope: ['profile', 'email']
     })
 );
 
 router.get(
-    '/google/callback', 
+    '/auth/google/callback', 
     passport.authenticate('google'), 
     (req, res) => {
         res.redirect('/');
     }
 );
 
-router.get('/logout', (req, res) => {
+
+router.get('/current/logout', (req, res) => {
     req.logout();       
     res.redirect('/');
 });
 
 //test route to show current user on req
-router.get('/current_user', (req, res) => {
+router.get('/current', (req, res) => {
     res.send(req.user);
 });
+
+
 
 
 module.exports = router;

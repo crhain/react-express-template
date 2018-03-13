@@ -4,12 +4,13 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
+const debug = require('debug')('react-express:app');
 
 const keys = require('./config/keys');
 
 //require route handlers
 const index = require('./routes/index');
-const auth = require('./routes/auth');
+const users = require('./routes/users');
 
 //////////////////////////////////////////////////////////////
 // ESTABLISH DB CONNECTION                                  //
@@ -47,7 +48,7 @@ require('./auth/passport');
 // SETUP ROUTE HANDLERS                                     //
 //////////////////////////////////////////////////////////////
 app.use('/', index);
-app.use('/auth', auth);
+app.use('/users', users);
 
 //////////////////////////////////////////////////////////////
 // SETUP 404 ERROR HANDLER                                  //

@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    userName: String,
+    userName: {type: String, required: true},
+    displayName: {type: String, required: true},
+    emails: {type: [String]},
+    createdDate: {type: Date, default: Date.now()},
+    lastLoggedDate: {type: Date, default: Date.now()},
     googleId: String,    
 });
 
