@@ -1,0 +1,7 @@
+# directories
+node_modules
+docs/private
+
+# files
+dev.js
+

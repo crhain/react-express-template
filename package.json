@@ -1,0 +1,39 @@
+{
+  "name": "react-express-template",
+  "version": "1.0.0",
+  "description": "A template for a fullstack application using react for the client and express.js for the server",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "server": "nodemon ./bin/www",
+    "client": "npm run start --prefix client",
+    "dev": "run-p server client",
+    "debug": "DEBUG=server node ./index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Carl Hain",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.2",
+    "lodash": "^4.17.5",
+    "mongoose": "^5.0.9",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^3.0.1"
+  },
+  "devDependencies": {
+    "debug": "^3.1.0",
+    "nodemon": "^1.17.1",
+    "npm-run-all": "^4.1.2"
+  }
+}
