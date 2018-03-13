@@ -42,7 +42,7 @@ app.use(
 // uncomment to following lines to use passport
 app.use(passport.initialize());
 app.use(passport.session());
-require('./auth/passport');
+require('./auth/passportConfig');
 
 //////////////////////////////////////////////////////////////
 // SETUP ROUTE HANDLERS                                     //

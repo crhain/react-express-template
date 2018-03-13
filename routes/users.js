@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const {requireLogin, requireLoggedout} = require('../auth');
 
 /* GET users listing. */
-router.get('/', (req, res, next) => {
+router.get('/', requireLogin, (req, res, next) => {
   res.send('This the users route!');
 });
 
 router.get(
-    '/auth/google', 
+    '/auth/google',
     passport.authenticate('google', {
         scope: ['profile', 'email']
     })
@@ -23,7 +24,7 @@ router.get(
 );
 
 
-router.get('/current/logout', (req, res) => {
+router.get('/current/logout', requireLogin, (req, res) => {
     req.logout();       
     res.redirect('/');
 });
