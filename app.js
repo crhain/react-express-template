@@ -48,7 +48,7 @@ require('./auth/passportConfig');
 // SETUP ROUTE HANDLERS                                     //
 //////////////////////////////////////////////////////////////
 app.use('/', index);
-app.use('/users', users);
+app.use('/api/users', users);
 
 //////////////////////////////////////////////////////////////
 // SETUP 404 ERROR HANDLER                                  //

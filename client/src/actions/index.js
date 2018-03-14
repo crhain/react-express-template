@@ -2,7 +2,7 @@ import axios from 'axios';
 import { FETCH_USER, SAMPLE_ACTION } from './types';
 
 export const fetchUser = () => async dispatch => {    
-    const res = await axios.get('/users/current')
+    const res = await axios.get('/api/users/current')
         .catch(e => {
             console.error("Error: ", e);
             return {data: {_id: "No User"}};

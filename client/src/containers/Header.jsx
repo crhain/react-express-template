@@ -8,14 +8,14 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return <span key="1"><a href="/users/auth/google">Login With Google</a></span>;
+                return <span key="1"><a href="api/users/auth/google">Login With Google</a></span>;
             default:
                 return [                                        
                     <span key="2" style={{marginLeft: '20px'}}>
                         {this.props.auth.displayName}
                     </span>,
                     <span key="3" style={{marginLeft: '20px'}}>
-                        <a href="/users/current/logout">Logout</a>
+                        <a href="api/users/current/logout">Logout</a>
                     </span>
                 ];
         }
