@@ -5,8 +5,8 @@ import * as actions from '../actions';
 
 //import other components here
 import Header from './Header';
-import Landing from './Landing';
-import Main from './Main';
+import Landing from '../components/Landing';
+import Main from '../components/Main';
 
 class App extends Component {
     componentDidMount() {
@@ -23,7 +23,7 @@ class App extends Component {
                         <Route exact path="/main" component={Main} />
                     </div>
                 </BrowserRouter>
-            </div>
+            </div>                        
         );
     }
 
