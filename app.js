@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-const debug = require('debug')('react-express:app');
+const debug = require('debug')('app:main');
 
 const keys = require('./config/keys');
 
@@ -12,11 +12,17 @@ const keys = require('./config/keys');
 const index = require('./routes/index');
 const users = require('./routes/users');
 
+
+
 //////////////////////////////////////////////////////////////
 // ESTABLISH DB CONNECTION                                  //
 //////////////////////////////////////////////////////////////
 //uncomment to use database
 mongoose.connect(keys.mongoURI);
+
+//seed sample data
+const seed = require('./utils/seed');
+seed();
 
 //////////////////////////////////////////////////////////////
 // CREATE EXPRESS APP                                       //
@@ -47,7 +53,7 @@ require('./auth/passportConfig');
 //////////////////////////////////////////////////////////////
 // SETUP ROUTE HANDLERS                                     //
 //////////////////////////////////////////////////////////////
-app.use('/', index);
+app.use('/api', index);
 app.use('/api/users', users);
 
 //////////////////////////////////////////////////////////////

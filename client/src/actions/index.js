@@ -18,10 +18,10 @@ export const fetchSample = () => async dispatch => {
 };
 
 //using react router history object to directly route
-export const submitSurvey = (values, history) => async dispatch => {
-    const res = await axios.post('/api/sample', values);
-    //takes history and uses it to progamatically route to /
-    history.push('/');
+export const submitSample = (values, history) => async dispatch => {
+    const res = await axios.post('/api/sample', values);    
+    //takes history and uses it to progamatically route to / 
+    history.push('/main');
+    dispatch({type: SAMPLE_ACTION, payload: res.data });
     
-    dispatch({type: FETCH_USER, payload: res.data });
 }

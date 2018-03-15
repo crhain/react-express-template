@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const {requireLogin, requireLoggedout} = require('../auth');
+const debug = require('debug')('app:users-routes');
 
 /* GET users listing. */
 router.get('/', requireLogin, (req, res, next) => {

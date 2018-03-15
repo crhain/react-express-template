@@ -3,7 +3,7 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('../config/keys');
 const User = require('../models/User');
-const debug = require('debug')('react-express:passport');
+const debug = require('debug')('app:passport');
 
 passport.serializeUser((user, done) => {
     done(null, user.id)
