@@ -6,6 +6,7 @@ This project provides a template for building fullstack applications with Expres
 - [Express](#Express)
   - [Debugging](#Debugging)
 - [React](#React)
+  - [Redux-Form](#Redux-Form)
 - [Configure Git](#Configure-Git)
 - [Deploying App To Heroku](#Deploying-App-To-Heroku)
 
@@ -25,10 +26,26 @@ Finally, to enable debugging you must also set the environmental variable DEBUG=
 for more information, see [npm-debug](https://www.npmjs.com/package/debug).
 
 
-
-
 ## React
 
+### Redux-Form
+
+Steps for using redux form in an application
+
+1. You must create a container component that is wrapped using the ReduxForm from the redux-form library:
+2. You must also connect the passed form to redux and pass an action handler that will send a post request to the server
+3. The form should have an `onSubmit={handleSubmit}` as a property if you want to use form validation
+4. You should then pass an action handler to the handleSubmit and call it with dispatch as follows: 
+  ```jsx
+    onSubmit={ handleSubmit((values, dispatch) => dispatch(submitSample(values, history)) ) }
+  ```
+5. The history object is used for routing back to another page from your handler and must be enabled by wrapping you componet in "withRouter" from react-router-dom.
+
+For an example on how to set up the rest of the form, see components in `client/src/sample` and "submitSample" handler in `client/src/actions/index.js`.
+
+For an example on how to build the post route handler on the server, see `routes/index.js`.  
+
+Redux-Form documentation is can found [here](https://redux-form.com/7.3.0/) 
 
 ## Configure Git
 
