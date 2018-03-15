@@ -1,7 +1,6 @@
-This project provides a template for building fullstack applications with Express.js and React.js.  The React portion was created using create-react-app.  For more information see the README.md in the client folder. 
+This project provides a template for building fullstack applications with Express.js and React.js based on an app built for Stephen Grider's udemy course "Node with React: Fullstack Web Development".  The React portion was created using create-react-app.  For more information on using react see the README.md in the client folder. 
 
 ## Table of Contents
-
 
 - [Express](#Express)
   - [Debugging](#Debugging)
